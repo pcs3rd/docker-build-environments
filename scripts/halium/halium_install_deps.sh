@@ -7,5 +7,5 @@ apt-get -y install git gnupg flex bison gperf build-essential \
   libgl1-mesa-dev g++-multilib mingw-w64-i686-dev tofrodos \
   python3-markdown libxml2-utils xsltproc zlib1g-dev:i386 schedtool \
   liblz4-tool bc lzop imagemagick libncurses5 rsync \
-  python-is-python3 libncurses5-dev
+  python-is-python3 libncurses5-dev curl
 rm -rf /var/lib/apt/lists/*
