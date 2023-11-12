@@ -7,8 +7,7 @@ apt-get -y install git gnupg flex bison gperf build-essential \
   libgl1-mesa-dev g++-multilib mingw-w64-i686-dev tofrodos \
   python3-markdown libxml2-utils xsltproc zlib1g-dev:i386 schedtool \
   liblz4-tool bc lzop imagemagick rsync \
-  python-is-python3 libncurses5-dev curl
+  python-is-python3 libncurses5-dev curl ca-certificates
 apt install -f
-sudo chmod 755 -R /etc/ssl/certs/
-update-ca-certificates
+chmod 755 -R /etc/ssl/certs/
 rm -rf /var/lib/apt/lists/*
