@@ -9,6 +9,6 @@ COPY ./scripts/halium/halium_install_deps.sh /root/install_deps.sh
 RUN bash /root/install_deps.sh && rm /root/install_deps.sh
 
 USER BuildUser
-COPY ./scripts/halium/halium_home_init.sh $HOME/home_init.sh
-RUN bash $HOME/home_init.sh && rm $HOME/home_init.sh
+COPY ./scripts/halium/halium_home_init.sh /home/BuildUser/home_init.sh
+RUN bash /home/BuildUser/home_init.sh && rm /home/BuildUser/home_init.sh
 
