@@ -5,6 +5,10 @@ RUN useradd -ms /bin/bash BuildUser
 USER root
 LABEL org.opencontainers.image.source="https://github.com/pcs3rd/docker-build-environments"
 
+RUN apt-get update && apt-get install -y openssh-server
+RUN mkdir /var/run/sshd
+RUN echo 'BuildUser:BuildUser' | chpasswd
+
 COPY ./scripts/halium_install_deps.sh /root/install_deps.sh 
 RUN bash /root/install_deps.sh && rm /root/install_deps.sh
 
@@ -12,4 +16,4 @@ USER BuildUser
 COPY ./scripts/halium_home_init.sh /home/BuildUser/home_init.sh
 RUN bash /home/BuildUser/home_init.sh && rm /home/BuildUser/home_init.sh
 
-ENTRYPOINT ["bash"]
+CMD ["/usr/sbin/sshd", "-D"]
