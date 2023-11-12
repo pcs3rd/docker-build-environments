@@ -2,18 +2,14 @@
 mkdir -p $HOME/bin
 # Download repo
 cd $HOME/bin/
+echo "Download repo"
 wget https://storage.googleapis.com/git-repo-downloads/repo 
 cd $HOME
 chmod a+rx ~/bin/repo
-echo export export PATH="$HOME/bin:$PATH"
- >> ~/.bashrc
+export PATH="$HOME/bin:$PATH" >> ~/.bashrc
 source $HOME/.bashrc
-export PATH="$HOME/bin:$PATH"
-
-#Check for repo
-whereis repo
-ls $HOME/bin/
-
 mkdir $HOME/halium && cd $HOME/halium
+echo "Halium repo init"
 repo init -u https://github.com/Halium/android -b halium-13.0 --depth=1
+echo "Halium repo sync"
 repo sync -c -j 16
