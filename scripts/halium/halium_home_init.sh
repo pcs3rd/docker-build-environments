@@ -1,7 +1,9 @@
 # Add bin in home for git-repo
 mkdir -p $HOME/bin
 # Download repo
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+cd $HOME/bin/
+wget https://storage.googleapis.com/git-repo-downloads/repo 
+cd $HOME
 chmod a+rx ~/bin/repo
 echo export PATH=\$PATH:\$HOME/bin >> ~/.bashrc
 source $HOME/.bashrc
