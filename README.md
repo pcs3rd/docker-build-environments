@@ -5,3 +5,4 @@ it can be pulled using `$ docker pull ghcr.io/pcs3rd/ubuntu-halium-build-env:ubu
 
 When using this image, make sure to bind mount /home/BuildUser/halium to your local Halium repo.
 
+For building halium, see [the build guide](https://docs.halium.org/en/latest/)
