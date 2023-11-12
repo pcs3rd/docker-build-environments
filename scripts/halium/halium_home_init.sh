@@ -6,6 +6,9 @@ source $HOME/.bashrc
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+rx ~/bin/repo
 
+#Check for repo
+whereis repo
+
 mkdir $HOME/halium && cd $HOME/halium
 repo init -u https://github.com/Halium/android -b halium-13.0 --depth=1
 repo sync -c -j 16
