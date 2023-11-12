@@ -8,5 +8,9 @@ cd $HOME
 chmod a+rx ~/bin/repo
 export PATH="$HOME/bin:$PATH" >> ~/.bashrc
 source $HOME/.bashrc
-mkdir $HOME/halium && cd $HOME/halium
+mkdir $HOME/halium
+repo --version
+git --version
+wget --version
+curl --version
 
