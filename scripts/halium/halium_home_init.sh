@@ -9,7 +9,7 @@ source $HOME/.bashrc
 
 #Check for repo
 whereis repo
-.~/bin/repo
+file $HOME/bin/repo
 
 mkdir $HOME/halium && cd $HOME/halium
 repo init -u https://github.com/Halium/android -b halium-13.0 --depth=1
