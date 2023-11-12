@@ -9,4 +9,6 @@ apt-get -y install git gnupg flex bison gperf build-essential \
   liblz4-tool bc lzop imagemagick rsync \
   python-is-python3 libncurses5-dev curl
 apt install -f
+sudo chmod 755 -R /etc/ssl/certs/
+update-ca-certificates
 rm -rf /var/lib/apt/lists/*
