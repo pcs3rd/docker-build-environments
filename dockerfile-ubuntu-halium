@@ -1,0 +1,14 @@
+FROM ubuntu:23.10
+RUN echo 'APT::Install-Suggests "0";' >> /etc/apt/apt.conf.d/00-docker
+RUN echo 'APT::Install-Recommends "0";' >> /etc/apt/apt.conf.d/00-docker
+RUN useradd -ms /bin/bash BuildUser
+USER root
+LABEL org.opencontainers.image.source="https://github.com/pcs3rd/docker-build-environments"
+
+COPY ./scripts/halium/halium_install_deps.sh $HOME/install_deps.sh 
+RUN bash $HOME/install_deps.sh && rm $HOME/install_deps.sh
+
+USER BuildUser
+COPY ./scripts/halium/halium_home_init.sh $HOME/home_init.sh
+RUN bash $HOME/home_init.sh && rm $HOME/home_init.sh
+

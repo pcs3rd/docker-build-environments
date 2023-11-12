@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-      Build-kasm-plugin-host:
+      Build_and_push:
         runs-on: ubuntu-latest
         defaults:
           run:
@@ -26,6 +26,6 @@ jobs:
           - name: 'Build Docker Image'
             run: |
               docker build . --tag ghcr.io/pcs3rd/Ubuntu-halium-build-env:23.10 -f dockerfile-ubuntu-halium
-          - name: 'Push kasm-pipewire-plugin-host to ghcr.io'
+          - name: 'Push to ghcr.io'
             run: |
               docker push ghcr.io/pcs3rd/Ubuntu-halium-build-env:23.10
