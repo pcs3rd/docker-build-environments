@@ -5,9 +5,10 @@ cd $HOME/bin/
 wget https://storage.googleapis.com/git-repo-downloads/repo 
 cd $HOME
 chmod a+rx ~/bin/repo
-echo export PATH=\$PATH:\$HOME/bin >> ~/.bashrc
+echo export export PATH="$HOME/bin:$PATH"
+ >> ~/.bashrc
 source $HOME/.bashrc
-export PATH=\$PATH:\$HOME/bin
+export PATH="$HOME/bin:$PATH"
 
 #Check for repo
 whereis repo
