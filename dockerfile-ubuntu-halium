@@ -8,6 +8,7 @@ LABEL org.opencontainers.image.source="https://github.com/pcs3rd/docker-build-en
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'BuildUser:BuildUser' | chpasswd
+RUN ssh-keygen
 
 COPY ./scripts/halium_install_deps.sh /root/install_deps.sh 
 RUN bash /root/install_deps.sh && rm /root/install_deps.sh
