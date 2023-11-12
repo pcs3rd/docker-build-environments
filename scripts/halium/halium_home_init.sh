@@ -7,7 +7,7 @@ cd $HOME
 chmod a+rx ~/bin/repo
 echo export PATH=\$PATH:\$HOME/bin >> ~/.bashrc
 source $HOME/.bashrc
-
+export PATH=\$PATH:\$HOME/bin
 
 #Check for repo
 whereis repo
