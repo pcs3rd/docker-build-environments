@@ -25,7 +25,7 @@ jobs:
               password: ${{secrets.TOKEN}}
           - name: 'Build Docker Image'
             run: |
-              docker build . --tag ghcr.io/pcs3rd/Ubuntu-halium-build-env:23.10 -f dockerfile-ubuntu-halium
+              docker build . --tag ghcr.io/pcs3rd/ubuntu-halium-build-env:23.10 -f dockerfile-ubuntu-halium
           - name: 'Push to ghcr.io'
             run: |
-              docker push ghcr.io/pcs3rd/Ubuntu-halium-build-env:23.10
+              docker push ghcr.io/pcs3rd/ubuntu-halium-build-env:23.10
