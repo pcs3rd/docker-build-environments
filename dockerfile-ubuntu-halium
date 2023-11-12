@@ -5,8 +5,8 @@ RUN useradd -ms /bin/bash BuildUser
 USER root
 LABEL org.opencontainers.image.source="https://github.com/pcs3rd/docker-build-environments"
 
-COPY ./scripts/halium/halium_install_deps.sh $HOME/install_deps.sh 
-RUN bash $HOME/install_deps.sh && rm $HOME/install_deps.sh
+COPY ./scripts/halium/halium_install_deps.sh /root/install_deps.sh 
+RUN bash /root/install_deps.sh && rm /root/install_deps.sh
 
 USER BuildUser
 COPY ./scripts/halium/halium_home_init.sh $HOME/home_init.sh
