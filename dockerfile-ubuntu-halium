@@ -18,10 +18,9 @@ USER BuildUser
 COPY ./scripts/halium_home_init.sh /home/BuildUser/home_init.sh
 RUN bash /home/BuildUser/home_init.sh && rm /home/BuildUser/home_init.sh
 RUN export PATH="$HOME/bin:$PATH" >> ~/.bashrc
-EXPOSE 22
+RUN echo 'BuildUser:BuildUser' | chpasswd
 
 USER root
-CMD ["/usr/sbin/sshd","-D"]
-
-USER BuildUser
-
+EXPOSE 22
+#CMD ["/usr/sbin/sshd","-D"]
+#CMD ["/usr/sbin/sshd"]
