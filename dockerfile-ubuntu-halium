@@ -23,5 +23,5 @@ USER root
 #CMD ["/usr/sbin/sshd","-D"]
 
 USER BuildUser
-CMD ["/usr/bin/bash]
+CMD ["/usr/bin/bash"]
 
