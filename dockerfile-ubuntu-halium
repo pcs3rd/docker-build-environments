@@ -20,5 +20,8 @@ RUN export PATH="$HOME/bin:$PATH" >> ~/.bashrc
 EXPOSE 22
 
 USER root
-CMD ["/usr/sbin/sshd","-D"]
+#CMD ["/usr/sbin/sshd","-D"]
+
 USER BuildUser
+CMD ["/usr/bin/bash]
+
