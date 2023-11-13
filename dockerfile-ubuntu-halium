@@ -19,9 +19,9 @@ RUN ssh-keygen -A
 RUN export PATH="$HOME/bin:$PATH" >> ~/.bashrc
 EXPOSE 22
 
-USER root
+#USER root
 #CMD ["/usr/sbin/sshd","-D"]
 
 USER BuildUser
-CMD ["/usr/bin/bash"]
+CMD ["/bin/bash"]
 
