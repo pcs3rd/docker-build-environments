@@ -16,6 +16,7 @@ USER BuildUser
 COPY ./scripts/halium_home_init.sh /home/BuildUser/home_init.sh
 RUN bash /home/BuildUser/home_init.sh && rm /home/BuildUser/home_init.sh
 RUN ssh-keygen -A
+RUN export PATH="$HOME/bin:$PATH" >> ~/.bashrc
 EXPOSE 22
 
 USER root
