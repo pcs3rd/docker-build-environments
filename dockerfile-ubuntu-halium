@@ -8,6 +8,8 @@ LABEL org.opencontainers.image.source="https://github.com/pcs3rd/docker-build-en
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'BuildUser:BuildUser' | chpasswd
+RUN ssh-keygen -A
+
 
 COPY ./scripts/halium_install_deps.sh /root/install_deps.sh 
 RUN bash /root/install_deps.sh && rm /root/install_deps.sh
@@ -15,13 +17,11 @@ RUN bash /root/install_deps.sh && rm /root/install_deps.sh
 USER BuildUser
 COPY ./scripts/halium_home_init.sh /home/BuildUser/home_init.sh
 RUN bash /home/BuildUser/home_init.sh && rm /home/BuildUser/home_init.sh
-RUN ssh-keygen -A
 RUN export PATH="$HOME/bin:$PATH" >> ~/.bashrc
 EXPOSE 22
 
-#USER root
-#CMD ["/usr/sbin/sshd","-D"]
+USER root
+CMD ["/usr/sbin/sshd","-D"]
 
 USER BuildUser
-CMD ["/bin/bash"]
 
